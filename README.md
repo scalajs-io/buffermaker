@@ -1,27 +1,63 @@
-Buffermaker API for Scala.js
+BufferMaker API for Scala.js
 ================================
-This is a Scala.js type-safe binding for [Buffermaker](https://www.npmjs.com/package/buffermaker)
+[buffermaker](https://www.npmjs.com/package/buffermaker) - A buffermaker is a convenient way of creating binary strings.
 
-A buffermaker is a convenient way of creating binary strings.
+### Description
 
-<a name="build_requirements"></a>
-#### Build Requirements
+A convenient way of creating binary strings in node.js because Buffer is a bit too low-level for comfort in this regard.
 
-* [ScalaJs.io v0.3.x](https://github.com/ldaniels528/scalajs.io)
+### Build Requirements
+
+* [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
-<a name="building_sdk"></a>
-#### Build/publish the SDK locally
+### Build/publish the SDK locally
 
 ```bash
  $ sbt clean publish-local
 ```
 
-<a name="resolvers"></a>
-#### Resolvers
+### Running the tests
 
-To add the Buffermaker binding to your project, add the following to your build.sbt:  
+Before running the tests the first time, you must ensure the npm packages are installed:
 
-```   
+```bash
+$ npm install
+```
+
+Then you can run the tests:
+
+```bash
+$ sbt test
+```
+
+### Examples
+
+```scala
+import io.scalajs.npm.buffermaker._
+import io.scalajs.npm.bignum.BigNum
+
+val someBuffer = new BufferMaker()
+    .UInt8(1)
+    .UInt16BE(2)
+    .UInt32BE(3)
+    .Int64BE(new BigNum("4")) // uses the BigNum library
+    .string("this is a test!")
+    .make()
+
+println(someBuffer.toString()) //=> <Buffer 01 00 02 00 00 00 03 00 00 00 00 00 00 00 04 74 68 69 73 20 69 73 20 61 20 74 65 73 74 21>
+```
+
+### Artifacts and Resolvers
+
+To add the `BufferMaker` binding to your project, add the following to your build.sbt:  
+
+```sbt
+libraryDependencies += "io.scalajs.npm" %%% "buffermaker" % "1.2.0"
+```
+
+Optionally, you may add the Sonatype Repository resolver:
+
+```sbt   
 resolvers += Resolver.sonatypeRepo("releases") 
 ```
