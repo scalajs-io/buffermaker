@@ -6,8 +6,8 @@ import sbt._
 
 import scala.language.postfixOps
 
-val apiVersion = "1.2.0"
-val scalaJsIOVersion = "0.3.0.5"
+val apiVersion = "1.2.0-2"
+val scalaJsIOVersion = "0.3.0.6"
 val scalaJsVersion = "2.12.1"
 
 homepage := Some(url("https://github.com/scalajs.io/buffermaker"))
@@ -28,7 +28,7 @@ lazy val root = (project in file(".")).
 	    "org.scala-lang" % "scala-reflect" % scalaJsVersion,
 	    "org.scalatest" %%% "scalatest" % "3.0.1" % "test",
 	    "io.scalajs" %%% "nodejs" % scalaJsIOVersion,
-        "io.scalajs.npm" %%% "bignum" % scalaJsIOVersion
+        "io.scalajs.npm" %%% "bignum" % "0.12.5-2"
   ))
 
 /////////////////////////////////////////////////////////////////////////////////

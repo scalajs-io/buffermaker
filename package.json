@@ -1,6 +1,6 @@
 {
   "name": "buffermaker-sjs",
-  "version": "1.2.0",
+  "version": "1.2.0-2",
   "private": true,
   "dependencies": {
     "buffermaker": "^1.2.0",
