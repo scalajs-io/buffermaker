@@ -6,11 +6,11 @@ import sbt._
 
 import scala.language.postfixOps
 
-val scalaJsIOVersion = "0.4.0-pre2"
+val scalaJsIOVersion = "0.4.0-pre3"
 val apiVersion = scalaJsIOVersion
 val scalaJsVersion = "2.12.1"
 
-homepage := Some(url("https://github.com/scalajs.io/buffermaker"))
+homepage := Some(url("https://github.com/scalajs-io/buffermaker"))
 
 lazy val root = (project in file(".")).
   enablePlugins(ScalaJSPlugin).
@@ -28,7 +28,7 @@ lazy val root = (project in file(".")).
 	    "org.scala-lang" % "scala-reflect" % scalaJsVersion,
 	    "org.scalatest" %%% "scalatest" % "3.0.1" % "test",
 	    "io.scalajs" %%% "nodejs" % scalaJsIOVersion,
-        "io.scalajs.npm" %%% "bignum" % "0.12.5-4"
+        "io.scalajs.npm" %%% "bignum" % scalaJsIOVersion
   ))
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -46,7 +46,7 @@ lazy val publishingSettings = Seq(
       Some("releases" at nexus + "service/local/staging/deploy/maven2")
   },
   pomExtra :=
-    <url>https://github.com/ldaniels528/scalajs-node-npm</url>
+    <url>https://github.com/scalajs-io/buffermaker</url>
       <licenses>
         <license>
           <name>MIT License</name>
