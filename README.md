@@ -8,7 +8,7 @@ A convenient way of creating binary strings in node.js because Buffer is a bit t
 
 ### Build Requirements
 
-* [SBT v0.13.16](http://www.scala-sbt.org/download.html)
+* [SBT v1.2.x](http://www.scala-sbt.org/download.html)
 
 ### Build/publish the SDK locally
 
@@ -52,7 +52,7 @@ println(someBuffer.toString()) //=> <Buffer 01 00 02 00 00 00 03 00 00 00 00 00 
 To add the `BufferMaker` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "buffermaker" % "0.4.2"
+libraryDependencies += "io.scalajs.npm" %%% "buffermaker" % "0.5.0"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
